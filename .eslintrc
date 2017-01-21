@@ -1,0 +1,14 @@
+{
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "log": true,
+    "config": true,
+    "db": true
+  },
+  "rules": {
+    "no-param-reassign": "off"
+  },
+  "extends": "airbnb-base"
+}
