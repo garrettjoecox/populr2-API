@@ -8,6 +8,7 @@
     "db": true
   },
   "rules": {
+    "arrow-body-style": "off",
     "no-param-reassign": "off"
   },
   "extends": "airbnb-base"
