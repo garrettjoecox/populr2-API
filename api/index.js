@@ -66,7 +66,19 @@ module.exports = (app) => {
   });
 
   app.get('/users/top', (req, res) => {
-    return res.sendStatus(501);
+    return db.people.findAll({ where: { position: { $not: null } }, include: [db.info], order: 'position', limit: 200 })
+      .then((people) => {
+        const lists = {};
+        lists.a = people.splice(0, 49);
+        lists.b = people.splice(0, 49);
+        lists.c = people.splice(0, 49);
+        lists.d = people.splice(0, 49);
+        res.status(200).send(lists);
+      })
+      .catch((e) => {
+        log.error(e);
+        return res.sendStatus(500);
+      });
   });
 
   app.post('/users', (req, res) => {
