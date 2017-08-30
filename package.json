@@ -1,25 +1,45 @@
 {
-  "name": "populr2-API",
-  "version": "0.0.2",
-  "description": "API module for populr",
+  "name": "populr2-api",
+  "version": "0.1.0",
+  "description": "Populr2 API",
   "main": "index.js",
-  "repository": "https://github.com/persnickety-vagabond/populr2-API.git",
+  "scripts": {
+    "start": "node index.js",
+    "prestart": "npm run build",
+    "build": "tsc",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "task": "node dist/tasks",
+    "test": "NODE_ENV=test mocha -r ts-node/register test/index.test.ts test/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrettjoecox/populr2-API.git"
+  },
   "author": "Garrett Cox <garrettjcox@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garrettjoecox/populr2-API/issues"
+  },
+  "homepage": "https://github.com/garrettjoecox/populr2-API#readme",
   "dependencies": {
-    "body-parser": "^1.16.0",
-    "colorslite": "^0.0.3",
-    "cors": "^2.8.1",
-    "express": "^4.14.0",
-    "morgan": "^1.7.0",
-    "populr2-Database": "https://github.com/persnickety-vagabond/populr2-Database.git",
-    "rc": "^1.1.6",
-    "request": "^2.79.0",
-    "twitter": "^1.7.0"
+    "@types/chalk": "^0.4.31",
+    "@types/koa": "^2.0.39",
+    "@types/koa-bodyparser": "^3.0.24",
+    "@types/koa-router": "^7.0.23",
+    "@types/lodash": "^4.14.74",
+    "@types/sequelize": "^4.0.72",
+    "chalk": "^2.1.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "lodash": "^4.17.4",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.7.5",
+    "twitter": "^1.7.1",
+    "typescript": "^2.4.2"
   },
   "devDependencies": {
-    "eslint": "^3.14.0",
-    "eslint-config-airbnb-base": "^11.0.1",
-    "eslint-plugin-import": "^2.2.0"
+    "tslint": "^5.7.0",
+    "tslint-config-airbnb": "^5.2.1"
   }
 }

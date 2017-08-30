@@ -1,2 +1,7 @@
+dist
+src/config/env/local.ts
 node_modules
-.populrrc
+npm-debug.log
+*~
+*#
+.DS_STORE
